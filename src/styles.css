@@ -1,0 +1,33 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Manrope', 'Segoe UI', Tahoma, sans-serif;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: var(--font-sans);
+    background-color: #eef2fb;
+    background-image:
+      radial-gradient(circle at 8% -10%, rgba(96, 165, 250, 0.28) 0%, transparent 32%),
+      radial-gradient(circle at 100% 0%, rgba(251, 191, 36, 0.16) 0%, transparent 34%),
+      radial-gradient(circle at 50% 100%, rgba(129, 140, 248, 0.16) 0%, transparent 40%);
+    background-attachment: fixed;
+    color: #0f172a;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  p {
+    margin: 0;
+  }
+}
+

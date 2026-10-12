@@ -1,0 +1,26 @@
+name: frontend-deploy
+
+on:
+  push:
+    tags:
+      - 'frontend-v*'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build production bundle
+        run: npm run build
+
+      - name: Deploy artifact
+        run: echo "Deploy static bundle to your CDN / hosting provider here"
