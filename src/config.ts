@@ -15,7 +15,11 @@ function nombreOuDefaut(valeur: string | undefined, defaut: number): number {
 }
 
 /** URL racine de l'API, sans slash final. */
-export const API_BASE_URL = (import.meta.env.VITE_API_URL ?? API_URL_PAR_DEFAUT).replace(/\/+$/, '');
+export const API_BASE_URL = (
+  import.meta.env.VITE_API_URL ??
+  import.meta.env.VITE_API_BASE_URL ??
+  API_URL_PAR_DEFAUT
+).replace(/\/+$/, '');
 
 /** Delai au-dela duquel une requete est abandonnee. */
 export const API_TIMEOUT_MS = nombreOuDefaut(import.meta.env.VITE_API_TIMEOUT_MS, DELAI_PAR_DEFAUT_MS);
